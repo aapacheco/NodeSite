@@ -1,0 +1,39 @@
+<!-- layout of user profile -->
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <h1>User Profile</h1>
+        <hr>
+        <h2>My Orders</h2>
+        {{# each orders }}
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <ul class="list-group" style="border-bottom: 1px 0; border-color: #11D200; border-style: solid;">
+                        {{# each this.items }}
+                            <li class="list-group-item">
+                              <table>
+                                <tbody>
+                                  <tr>
+                                    <td><strong>Item:</strong> {{ this.item.name }}</td>
+                                  </tr>
+                                </tbody>
+                                <tfoot>
+                                  <tr>
+                                    <td>
+                                      <span class="badge">Qty: {{ this.quantity }} | </span>
+                                      <span class="badge">Cost: ${{ this.price }}</span>
+                                    </td>
+                                  </tr>
+                                </tfoot>
+                              </table>
+                            </li>
+                        {{/each}}
+                    </ul>
+                </div>
+                <div class="panel-footer">
+                    <strong>Total Price: ${{ this.cart.totalPrice }}</strong>
+                </div>
+            </div>
+            <br>
+        {{/each}}
+    </div>
+</div>

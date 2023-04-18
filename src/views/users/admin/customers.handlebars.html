@@ -1,0 +1,34 @@
+<!-- layout of user profile -->
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <hr>
+        <h2>View Customers</h2>
+        {{# each customers }}
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <ul class="list-group" style="border-bottom: 1px 0; border-color: #FFA501; border-style: solid;">
+                      <li class="list-group-item">
+                        <table>
+                          <tbody>
+                            <tr>
+                              <td><strong>E-Mail:</strong> {{ this.email }}</td>
+                            </tr>
+                          </tbody>
+                          <tfoot>
+                            <tr>
+                              <td>
+                                <a href="/users/admin/orders/{{this.email}}" class="btn btn-info" role="button">View Orders</a>
+                                <a href="/users/admin/customers/delete/{{this.email}}" class="btn btn-warning" role="button">Remove Customer</a>
+                              </td>
+                            </tr>
+                          </tfoot>
+                        </table>
+                      </li>
+
+                    </ul>
+                </div>
+            </div>
+            <br>
+        {{/each}}
+    </div>
+</div>

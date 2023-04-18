@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<products><product>
+<id>001</id>
+<name>The Legend Of Zelda Heroes Poster</name>
+<description>The Legend Of Zelta is a gaming franchise by Nintendo.</description>
+<price>12</price>
+<quantity>9</quantity>
+<imagePath>https://cdn.europosters.eu/image/750/posters/the-legend-of-zelda-link-i22805.jpg</imagePath>
+<outOfStock>false</outOfStock>
+</product>
+<product>
+<id>002</id>
+<name>Apple iPhone X</name>
+<description>The newest iPhone by Apple using Face ID Technology</description>
+<price>999</price>
+<quantity>10</quantity>
+<imagePath>https://www.pngarts.com/files/3/IPhone-X-PNG-High-Quality-Image.png</imagePath>
+<outOfStock>false</outOfStock>
+</product>
+<product>
+<id>003</id>
+<name>New Orleans Saints - Drew Brees Signed Helmet</name>
+<description>This is a New Orleans Saints Full Size Replica Helmet that has been hand signed by Drew Brees. This item has been certified authentic by Beckett Authentication (BAS) and comes with their serial numbered sticker and matching certificate of authenticity.</description>
+<price>569</price>
+<quantity>10</quantity>
+<imagePath>https://cdn11.bigcommerce.com/s-ycbvq3ez/images/stencil/1280x1280/products/122518/137845/P1090790__47999.1532477671.1280.1280__02690.1532745466.jpg</imagePath>
+<outOfStock>false</outOfStock>
+</product>
+<product>
+<id>004</id>
+<name>TaylorMade M5 Driver</name>
+<description>This is the newest driver from TaylorMades 'M' Family.</description>
+<price>549</price>
+<quantity>10</quantity>
+<imagePath>https://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/5/2018/10/M5.jpg</imagePath>
+<outOfStock>false</outOfStock>
+</product>
+</products>

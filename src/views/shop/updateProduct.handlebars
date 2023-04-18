@@ -1,0 +1,56 @@
+<div class="table-responsive">
+  {{#if hasErrors}}
+    <div class="alert alert-danger">
+      {{#each messages}}
+        <p>{{this}}</p>
+      {{/each}}
+    </div>
+  {{/if}}
+ <form method="post">
+   <table class="table table-condensed">
+     <tbody>
+      <tr>
+       <th width="100">Product ID: </th>
+       <td><input disabled name="pid" value="{{this.id}}"></td>
+      </tr>
+      <tr>
+        <th>Product Name: </th>
+        <td><input type="text" name="name" required
+             value="{{this.name}}"></td>
+      </tr>
+      <tr>
+        <th>Description: </th>
+        <td><input type="text" name="description" required
+             value="{{this.description}}"></td>
+      </tr>
+      <tr>
+        <th>Price: </th>
+        <td><input type="number" name="price" value="{{this.price}}"required></td>
+      </tr>
+      <tr>
+        <th>Inventory: </th>
+        <td><input type="number" name="quantity" value="{{this.quantity}}" required></td>
+      </tr>
+      <tr>
+        <th>Image URL: </th>
+        <td><input type="text" name="imagePath" required
+             value="{{this.imagePath}}"></td>
+      </tr>
+      <tr>
+        <th>In Stock: </th>
+        <td><input disabled name="outOfStock" value="{{this.outOfStock}}"></td>
+      </tr>
+     </tbody>
+     <tfoot>
+       <tr>
+         <!-- <a role="button" class="btn btn-warning" onclick="window.location.href='/delete/:{{this.id}}'">Delete Product</a> -->
+
+         <td>
+         <button type="submit" style="width:10em; margin-bottom:0.5em;" class="btn btn-primary">Save Product</button>
+         <input class="btn btn-warning" style="width:10em; margin-bottom:0.5em;" value="Delete Product" onclick="window.location.href='/delete/{{this.id}}'"></input>
+         <button type="button" style="width:10em; margin-bottom:0.5em;" class="btn btn-outline-dark" onclick="window.location.href='/'">Cancel</button></td>
+     </tr>
+     </tfoot>
+   </table>
+ </form>
+ </div>

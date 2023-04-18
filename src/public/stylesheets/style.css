@@ -1,0 +1,47 @@
+.thumbnail {
+  border-width: thin;
+}
+
+.thumbnail img {
+  max-height: 150px;
+
+}
+
+#footer {
+  position: absolute;
+  width: 100%;
+  bottom: 2.5%;
+  left: 0;
+  content: center;
+  margin-top: 20%;
+
+}
+.thumbnail .description{
+  max-height: 100px;
+  overflow: scroll;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  margin-bottom: 30%;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 16px;
+
+}
+
+.btn-group button {
+  /*background-color: #4CAF50;*/ /* Green background */
+  color: white; /* White text */
+  cursor: pointer; /* Pointer/hand icon */
+}
+
+.btn-group button:not(:last-child) {
+  border-bottom: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+  background-color: #777777; /*#3e8e41;*/
+  background-position: 0px;
+}

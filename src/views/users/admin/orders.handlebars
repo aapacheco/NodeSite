@@ -1,0 +1,46 @@
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="row" style="padding-left:0.5em;">
+        <div class="col-sm-6 col-md-6 col-sm-offset-3 col-md-offset-3">
+          <input class="btn btn-default" style="background-color:#11D200;color:black;" onclick="window.location.href='/users/admin/customers'" value="Go Back"></input>
+        </div>
+      </div>
+      {{# if email}}
+      <hr>
+      <h2>Order History - {{email}}</h2>
+      {{# each orders as |order|}}
+          <div class="panel panel-default">
+              <div class="panel-body">
+                  <ul class="list-group" style="border-bottom: 1px 0; border-color: #11D200; border-style: solid;">
+                      {{# each order.items as |item| }}
+                          <li class="list-group-item">
+                            <table>
+                              <tbody>
+                                <tr>
+                                  <td><strong>Item:</strong> {{ item.item.name }}</td>
+                                </tr>
+                              </tbody>
+                              <tfoot>
+                                <tr>
+                                  <td>
+                                    <span class="badge">Qty: {{ item.quantity }} | </span>
+                                    <span class="badge">Cost: ${{ item.price }}</span>
+                                  </td>
+                                </tr>
+                              </tfoot>
+                            </table>
+                          </li>
+                      {{/each}}
+                  </ul>
+              </div>
+              <div class="panel-footer">
+                  <div><strong>Total Price: ${{ order.cart.totalPrice }}</strong></div>
+                  <a href="/users/admin/orders/{{../email}}/{{order._id}}/remove" class="btn btn-default" style="background-color:#11D200;color:black;" role="button">Remove Order</a>
+                  <a href="/users/admin/orders/{{../email}}/{{order._id}}/update" class="btn btn-warning" role="button">Update Order</a>
+              </div>
+          </div>
+          <br>
+      {{/each}}
+      {{/if}}
+    </div>
+</div>

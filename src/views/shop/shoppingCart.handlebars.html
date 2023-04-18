@@ -1,0 +1,49 @@
+<!-- Cart View -->
+{{# if products}}
+    <div class="row">
+      <table>
+          {{# each products as |product|}}
+          <tr>
+            <th>{{product.item.name}}: ${{product.item.price}}</th>
+
+            <tr><td>Quantity: {{product.quantity}}</td>
+              <td>
+                {{# if ../canCheckout}}
+                  <input class="btn btn-primary" style="width: 2.5em; text-size: auto" value="+" onclick="window.location.href='/increase/{{product.item._id}}'"></input>
+                {{ else }}
+                  <input class="btn btn-primary" style="width: 2.5em; text-size: auto" value="+" onclick="window.location.href='/increase/{{product.item._id}}'"></input>
+                {{/if}}
+                <input class="btn btn-primary" style="width: 2.5em; text-size: auto" value="-" onclick="window.location.href='/decrease/{{this.item._id}}'"></input>
+                <input class="btn btn-danger" style="width: 7.5em; text-size: auto" value="Remove" onclick="window.location.href='/remove/{{this.item._id}}'"></input>
+              </td>
+            </tr>
+          </tr>
+          {{/each}}
+        </table>
+
+    </div>
+    <div class="row">
+      <strong>Total Price: ${{totalPrice}}</strong>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-sm-6 col-md-6 col-sm-offset-3 col-md-offset-3">
+        {{#if canCheckout}}
+        <input class="btn btn-success" style="width: 7.5em; text-size: auto" value="Checkout" onclick="window.location.href='/checkout'"></input>
+        {{else}}
+        <input class="btn btn-success disabled" style="width: 7.5em; text-size: auto" value="Checkout" onclick=""></input>
+        {{# if msg}}
+          <div style="background-color:red;">
+            <div style="font-color:white;">msg</div>
+          </div>
+        {{/if}}
+        {{/if}}
+      </div>
+    </div>
+{{else}}
+    <div class="row">
+      <div class="col-sm-6 col-md-6 col-sm-offset-3 col-md-offset-3">
+        <strong>Your Cart Is Empty!</strong>
+      </div>
+    </div>
+{{/if}}

@@ -1,0 +1,54 @@
+<!-- layout of store home page which displays product information and
+formatting of the product grid, also with bootstrap-->
+{{# if msg}}
+<div class="alert justify-content-md-center" style="align-content:center;width:175px;border-color:red;color:red;border-width:medium;">{{this.msg}}</div>
+{{/if}}
+{{# if isAdmin}}
+    {{# each products}}
+    <div class="row">
+      {{# each this as |item|}}
+        <div class="col-sm-6 col-md-4 py-3 px-5 border bg-light">
+          <div class="thumbnail">
+            <div class="text-center">
+              <img src="{{item.imagePath}}" class="rounded img-responsive" alt="...">
+              <div class="caption">
+                <h4>{{item.name}}</h4>
+                <p class="description">{{item.description}}</p>
+                <div id="footer">
+                  <div class="price">${{item.price}}</div>
+                  <a href="/updateProduct/{{item._id}}" class="btn btn-dark" role="button">Edit Product Info</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    {{/each}}
+{{else}}
+    {{# each products}}
+    <div class="row">
+      {{# each this as |item|}}
+        <div class="col-sm-6 col-md-4 py-3 px-5 border bg-light">
+          <div class="thumbnail">
+            <div class="text-center">
+              <img src="{{item.imagePath}}" class="rounded img-responsive" alt="...">
+              <div class="caption">
+                <h4>{{item.name}}</h4>
+                <p class="description">{{item.description}}</p>
+                <div id="footer">
+                  <div class="price">${{item.price}}</div>
+                    {{#if outOfStock}}
+                        <a href="/" class="btn btn-danger disabled" role="button">Out Of Stock</a>
+                    {{else}}
+                        <a href="/add-to-cart/{{item._id}}" class="btn btn-primary" role="button">Add To Cart</a>
+                    {{/if}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    {{/each}}
+{{/if}}

@@ -1,0 +1,44 @@
+<div class="row" style="padding-left:0.5em;">
+  {{# if email}}
+  {{# if id}}
+  {{#if cart}}
+      <div class="row">
+        <table class="table table-condensed">
+          {{#each cart as |product|}}
+          <tr>
+            <th>{{product.item.name}}: ${{product.item.price}}</th>
+            <tr><td>Current Quantity: {{product.quantity}}</td>
+              <td>
+                Update Quantity:
+                <input class="btn btn-primary" style="width: 2.5em;" value="+" onclick="window.location.href='/users/admin/orders/{{../email}}/{{../id}}/update/increase/{{product.item._id}}'"></input>
+                <input class="btn btn-primary" style="width: 2.5em;" value="-" onclick="window.location.href='/users/admin/orders/{{../email}}/{{../id}}/update/decrease/{{product.item._id}}'"></input>
+              </td>
+            </tr>
+          </tr>
+          {{/each}}
+          <tr>
+            <td>
+              <strong>Total Price: ${{totalPrice}}</strong>
+            </td>
+          </tr>
+      </table>
+    </div>
+  </div>
+  <hr>
+  <div class="row" style="padding-left:0.5em;">
+    <div class="col-sm-6 col-md-6 col-sm-offset-3 col-md-offset-3">
+      <input class="btn btn-default" style="background-color:#11D200;color:black;" onclick="window.location.href='/users/admin/orders/{{email}}'" value="Finished"></input>
+    </div>
+  </div>
+
+  {{else}}
+
+  <div class="row" style="padding-left:0.5em;">
+    <div class="col-sm-6 col-md-6 col-sm-offset-3 col-md-offset-3">
+      <strong>Your Order Is Empty!</strong>
+    </div>
+  </div>
+  {{/if}}
+  {{/if}}
+  {{/if}}
+</div>
